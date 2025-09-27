@@ -1,7 +1,7 @@
 [
     {
         "name": "Davey Martinez",
-        "info": "Nationals Manager",
+        "info": "Former Nationals Manager",
         "nats_connection": "Yes",
         "manager": "Yes",
         "milb_manager": "N/A",
@@ -18,11 +18,12 @@
         "age": 61,
         "winning_percentage": 0.446,
         "manager_of_the_year": "No",
-        "top_orgs": "No"
+        "top_orgs": "No",
+        "score":0
     },
     {
         "name": "Brandon Hyde",
-        "info": "Orioles Manager",
+        "info": "Former Orioles Manager",
         "nats_connection": "No",
         "manager": "Yes",
         "milb_manager": "N/A",
@@ -39,11 +40,12 @@
         "age": 51,
         "winning_percentage": 0.461,
         "manager_of_the_year": "Yes",
-        "top_orgs": "Yes"
+        "top_orgs": "Yes",
+        "score":0
     },
     {
         "name": "Derek Shelton",
-        "info": "Pirates Manager",
+        "info": "Former Pirates Manager",
         "nats_connection": "No",
         "manager": "Yes",
         "milb_manager": "N/A",
@@ -60,7 +62,8 @@
         "age": 55,
         "winning_percentage": 0.41,
         "manager_of_the_year": "No",
-        "top_orgs": "No"
+        "top_orgs": "No",
+        "score":0
     },
     {
         "name": "George Lombard",
@@ -81,7 +84,8 @@
         "age": 50,
         "winning_percentage": 0.0,
         "manager_of_the_year": "No",
-        "top_orgs": "No"
+        "top_orgs": "No",
+        "score":0
     },
     {
         "name": "Alyssa Nakken ",
@@ -102,7 +106,8 @@
         "age": 35,
         "winning_percentage": 0.0,
         "manager_of_the_year": "No",
-        "top_orgs": "No"
+        "top_orgs": "No",
+        "score":0
     },
     {
         "name": "Kristopher Negr\u00c3\u00b3n\u00c2\u00a0",
@@ -123,7 +128,8 @@
         "age": 39,
         "winning_percentage": 0.0,
         "manager_of_the_year": "No",
-        "top_orgs": "No"
+        "top_orgs": "No",
+        "score":0
     },
     {
         "name": "Johnny Washington\u00c2\u00a0",
@@ -144,7 +150,8 @@
         "age": 41,
         "winning_percentage": 0.0,
         "manager_of_the_year": "No",
-        "top_orgs": "No"
+        "top_orgs": "No",
+        "score":0
     },
     {
         "name": "Rickie Weeks Jr.\u00c2\u00a0",
@@ -165,7 +172,8 @@
         "age": 43,
         "winning_percentage": 0.0,
         "manager_of_the_year": "No",
-        "top_orgs": "Yes"
+        "top_orgs": "Yes",
+        "score":0
     },
     {
         "name": "Craig Albernaz\u00c2\u00a0",
@@ -186,7 +194,8 @@
         "age": 42,
         "winning_percentage": 0.0,
         "manager_of_the_year": "No",
-        "top_orgs": "Yes"
+        "top_orgs": "Yes",
+        "score":0
     },
     {
         "name": "Kai Correa ",
@@ -207,7 +216,8 @@
         "age": 37,
         "winning_percentage": 0.0,
         "manager_of_the_year": "No",
-        "top_orgs": "Yes"
+        "top_orgs": "Yes",
+        "score":0
     },
     {
         "name": "Daniel Descalso\u00c2\u00a0",
@@ -228,7 +238,8 @@
         "age": 38,
         "winning_percentage": 0.0,
         "manager_of_the_year": "No",
-        "top_orgs": "No"
+        "top_orgs": "No",
+        "score":0
     },
     {
         "name": "Ryan Flaherty\u00c2\u00a0",
@@ -249,7 +260,8 @@
         "age": 39,
         "winning_percentage": 0.0,
         "manager_of_the_year": "No",
-        "top_orgs": "No"
+        "top_orgs": "No",
+        "score":0
     },
     {
         "name": "Danny Lehmann\u00c2\u00a0",
@@ -270,7 +282,8 @@
         "age": 40,
         "winning_percentage": 0.0,
         "manager_of_the_year": "No",
-        "top_orgs": "Yes"
+        "top_orgs": "Yes",
+        "score":0
     },
     {
         "name": "Skip Schumaker ",
@@ -291,7 +304,8 @@
         "age": 45,
         "winning_percentage": 0.451,
         "manager_of_the_year": "Yes",
-        "top_orgs": "No"
+        "top_orgs": "No",
+        "score":0
     },
     {
         "name": "David Bell ",
@@ -312,7 +326,8 @@
         "age": 53,
         "winning_percentage": 0.473,
         "manager_of_the_year": "No",
-        "top_orgs": "No"
+        "top_orgs": "No",
+        "score":0
     },
     {
         "name": "Scott Servais\u00c2\u00a0",
@@ -333,7 +348,8 @@
         "age": 58,
         "winning_percentage": 0.517,
         "manager_of_the_year": "No",
-        "top_orgs": "No"
+        "top_orgs": "No",
+        "score":0
     },
     {
         "name": "Buck Showalter ",
@@ -354,7 +370,8 @@
         "age": 69,
         "winning_percentage": 0.509,
         "manager_of_the_year": "Yes",
-        "top_orgs": "No"
+        "top_orgs": "No",
+        "score":0
     },
     {
         "name": "David Ross\u00c2\u00a0",
@@ -375,7 +392,8 @@
         "age": 48,
         "winning_percentage": 0.48,
         "manager_of_the_year": "No",
-        "top_orgs": "No"
+        "top_orgs": "No",
+        "score":0
     },
     {
         "name": "Phil Nevin\u00c2\u00a0",
@@ -396,7 +414,8 @@
         "age": 54,
         "winning_percentage": 0.444,
         "manager_of_the_year": "No",
-        "top_orgs": "No"
+        "top_orgs": "No",
+        "score":0
     },
     {
         "name": "Joe Maddon ",
@@ -417,7 +436,8 @@
         "age": 71,
         "winning_percentage": 0.532,
         "manager_of_the_year": "Yes",
-        "top_orgs": "No"
+        "top_orgs": "No",
+        "score":0
     },
     {
         "name": "Joe Girardi\u00c2\u00a0",
@@ -438,7 +458,8 @@
         "age": 60,
         "winning_percentage": 0.545,
         "manager_of_the_year": "Yes",
-        "top_orgs": "No"
+        "top_orgs": "No",
+        "score":0
     },
     {
         "name": "DeMarlo Hale",
@@ -459,7 +480,8 @@
         "age": 64,
         "winning_percentage": 0.0,
         "manager_of_the_year": "No",
-        "top_orgs": "No"
+        "top_orgs": "No",
+        "score":0
     },
     {
         "name": "Don Mattingly",
@@ -480,7 +502,8 @@
         "age": 64,
         "winning_percentage": 0.483,
         "manager_of_the_year": "Yes",
-        "top_orgs": "No"
+        "top_orgs": "No",
+        "score":0
     },
     {
         "name": "Charlie Montoyo",
@@ -501,7 +524,8 @@
         "age": 59,
         "winning_percentage": 0.5,
         "manager_of_the_year": "No",
-        "top_orgs": "No"
+        "top_orgs": "No",
+        "score":0
     },
     {
         "name": "Mike Redmond",
@@ -522,7 +546,8 @@
         "age": 54,
         "winning_percentage": 0.428,
         "manager_of_the_year": "No",
-        "top_orgs": "No"
+        "top_orgs": "No",
+        "score":0
     },
     {
         "name": "Jayce Tingler",
@@ -543,7 +568,8 @@
         "age": 44,
         "winning_percentage": 0.527,
         "manager_of_the_year": "No",
-        "top_orgs": "No"
+        "top_orgs": "No",
+        "score":0
     },
     {
         "name": "Walt Weiss",
@@ -564,7 +590,8 @@
         "age": 61,
         "winning_percentage": 0.437,
         "manager_of_the_year": "No",
-        "top_orgs": "No"
+        "top_orgs": "No",
+        "score":0
     },
     {
         "name": "Brad Ausmus",
@@ -585,7 +612,8 @@
         "age": 56,
         "winning_percentage": 0.478,
         "manager_of_the_year": "No",
-        "top_orgs": "Yes"
+        "top_orgs": "Yes",
+        "score":0
     },
     {
         "name": "Jeff Banister",
@@ -606,7 +634,8 @@
         "age": 61,
         "winning_percentage": 0.509,
         "manager_of_the_year": "Yes",
-        "top_orgs": "Yes"
+        "top_orgs": "Yes",
+        "score":0
     },
     {
         "name": "Miguel Cairo",
@@ -627,7 +656,8 @@
         "age": 51,
         "winning_percentage": 0.45,
         "manager_of_the_year": "No",
-        "top_orgs": "No"
+        "top_orgs": "No",
+        "score":0
     },
     {
         "name": "John Gibbons",
@@ -648,7 +678,8 @@
         "age": 63,
         "winning_percentage": 0.501,
         "manager_of_the_year": "No",
-        "top_orgs": "No"
+        "top_orgs": "No",
+        "score":0
     },
     {
         "name": "Fredi Gonz\u00c3\u00a1lez",
@@ -669,7 +700,8 @@
         "age": 61,
         "winning_percentage": 0.506,
         "manager_of_the_year": "No",
-        "top_orgs": "Yes"
+        "top_orgs": "Yes",
+        "score":0
     },
     {
         "name": "Sal Fasano",
@@ -690,7 +722,8 @@
         "age": 54,
         "winning_percentage": 0.0,
         "manager_of_the_year": "No",
-        "top_orgs": "No"
+        "top_orgs": "No",
+        "score":0
     },
     {
         "name": "Rodney Linares",
@@ -711,7 +744,8 @@
         "age": 48,
         "winning_percentage": 0.0,
         "manager_of_the_year": "No",
-        "top_orgs": "Yes"
+        "top_orgs": "Yes",
+        "score":0
     },
     {
         "name": "Kevin Long",
@@ -732,7 +766,8 @@
         "age": 58,
         "winning_percentage": 0.0,
         "manager_of_the_year": "No",
-        "top_orgs": "Yes"
+        "top_orgs": "Yes",
+        "score":0
     },
     {
         "name": "Hensley Meulens",
@@ -753,7 +788,8 @@
         "age": 58,
         "winning_percentage": 0.0,
         "manager_of_the_year": "No",
-        "top_orgs": "No"
+        "top_orgs": "No",
+        "score":0
     },
     {
         "name": "Ryan Zimmerman",
@@ -774,7 +810,8 @@
         "age": 40,
         "winning_percentage": 0.0,
         "manager_of_the_year": "No",
-        "top_orgs": "No"
+        "top_orgs": "No",
+        "score":0
     },
     {
         "name": "Sean Doolittle",
@@ -795,7 +832,8 @@
         "age": 39,
         "winning_percentage": 0.0,
         "manager_of_the_year": "No",
-        "top_orgs": "No"
+        "top_orgs": "No",
+        "score":0
     },
     {
         "name": "Brian Snitker",
@@ -816,6 +854,7 @@
         "age": 69,
         "winning_percentage": 0.546,
         "manager_of_the_year": "Yes",
-        "top_orgs": "Yes"
+        "top_orgs": "Yes",
+        "score":0
     }
 ]
