@@ -1,0 +1,40 @@
+﻿Candidate,Last Position,Nats Connection?,Previous MLB Manager?,Previous Minor League Manager,Years MLB Managerial Experience,Previous coach?,Years coaching experience?,Highest coach level?,Former MLB player?,Pitching first or hitting first?,Player development experience?,Made playoffs?,Won pennant?,Won World Series?,Age,Win percentage,Manager of the Year?,From one of the Athletic's top 10 organizations in baseball?
+Davey Martinez,Nationals Manager,Yes,Yes,N/A,8,Yes,10,Manager,Yes,Hitting,No,Yes,Yes,Yes,61,0.446,No,No
+Brandon Hyde,Orioles Manager,No,Yes,N/A,8,Yes,7,Manager,No,Hitting,Yes,Yes,No,No,51,0.461,Yes,Yes
+Derek Shelton,Pirates Manager,No,Yes,N/A,6,Yes,15,Manager,No,Hitting,Yes,No,No,No,55,0.41,No,No
+George Lombard,Tigers bench coach,Yes,No,Yes,0,Yes,10,Bench Coach,Yes,Hitting,Yes,Yes,No,No,50,0,No,No
+Alyssa Nakken ,Giants assistant coach,No,No,No,0,Yes,5,Base Coach,No,Hitting,Yes,Yes,No,No,35,0,No,No
+Kristopher Negrón ,Mariners first base coach,No,No,No,0,Yes,4,Base Coach,Yes,Hitting,No,Yes,No,No,39,0,No,No
+Johnny Washington ,Angels hitting coach,No,No,No,0,Yes,7,Hitting/Pitching Coach,No,Hitting,Yes,Yes,No,No,41,0,No,No
+Rickie Weeks Jr. ,Brewers associate manage,No,No,No,0,Yes,2,Associate Manager,Yes,Hitting,Yes,Yes,No,No,43,0,No,Yes
+Craig Albernaz ,Guardians bench coach,No,No,Yes,0,Yes,6,Associate Manager,No,Pitching,Yes,Yes,No,No,42,0,No,Yes
+Kai Correa ,Guardians field coordinator,No,No,No,0,Yes,6,Bench Coach,No,Hitting,Yes,Yes,No,No,37,0,No,Yes
+Daniel Descalso ,Cardinals bench coach,No,No,No,0,Yes,2,Bench Coach,Yes,Hitting,No,No,No,No,38,0,No,No
+Ryan Flaherty ,Cubs bench coach,No,No,No,0,Yes,6,Bench Coach,Yes,Hitting,No,Yes,No,No,39,0,No,No
+Danny Lehmann ,Dodgers bench coach,No,No,No,0,Yes,7,Bench Coach,No,Hitting,Yes,Yes,Yes,Yes,40,0,No,Yes
+Skip Schumaker ,Marlins manager,No,Yes,N/A,2,Yes,5,Manager,Yes,Hitting,No,Yes,No,No,45,0.451,Yes,No
+David Bell ,Reds manager,No,Yes,N/A,6,Yes,5,Manager,Yes,Hitting,Yes,Yes,No,No,53,0.473,No,No
+Scott Servais ,Mariners manager,No,Yes,N/A,9,Yes,8,Manager,Yes,Hitting,Yes,Yes,No,No,58,0.517,No,No
+Buck Showalter ,last managed the 2023 Mets,No,Yes,N/A,21,Yes,2,Manager,No,N/A,No,Yes,No,No,69,0.509,Yes,No
+David Ross ,last managed the 2023 Cubs,No,Yes,N/A,4,No,0,Manager,Yes,Hitting,No,Yes,No,No,48,0.48,No,No
+Phil Nevin ,last managed the 2023 Angels,No,Yes,N/A,2,Yes,6,Manager,Yes,Hitting,No,No,No,No,54,0.444,No,No
+Joe Maddon ,last managed the 2022 Angels,No,Yes,N/A,19,Yes,12,Manager,No,Hitting,Yes,Yes,Yes,Yes,71,0.532,Yes,No
+Joe Girardi ,last managed the 2022 Phillies,No,Yes,N/A,14,Yes,1,Manager,Yes,Hitting,No,Yes,Yes,Yes,60,0.545,Yes,No
+DeMarlo Hale,Blue Jays associate manager; Guardians acting manager,No,No,Yes,0,Yes,23,Bench Coach,No,N/A,Yes,Yes,No,No,64,0,No,No
+Don Mattingly,Blue Jays bench coach; former Dodgers and Marlins manager,No,Yes,N/A,12,Yes,10,Manager,Yes,Hitting,No,Yes,No,No,64,0.483,Yes,No
+Charlie Montoyo,former Blue Jays manager,No,Yes,N/A,4,Yes,6,Manager,Yes,Hitting,Yes,Yes,No,No,59,0.5,No,No
+Mike Redmond,Rockies bench coach; former Marlins manager,No,Yes,N/A,3,Yes,9,Manager,Yes,Hitting,Yes,No,No,No,54,0.428,No,No
+Jayce Tingler,Twins bench coach; former Padres manager,No,Yes,N/A,2,Yes,8,Manager,No,N/A,Yes,Yes,No,No,44,0.527,No,No
+Walt Weiss,Braves bench coach; former Rockies manager,No,Yes,N/A,4,Yes,8,Manager,Yes,Hitting,No,No,No,No,61,0.437,No,No
+Brad Ausmus,Yankees bench coach; former Tigers and Angels manager,No,Yes,N/A,5,Yes,3,Manager,Yes,Hitting,No,Yes,No,No,56,0.478,No,Yes
+Jeff Banister,Diamondbacks bench coach; former Rangers manager ,No,Yes,N/A,4,Yes,9,Manager,Yes,Hitting,Yes,Yes,No,No,61,0.509,Yes,Yes
+Miguel Cairo,Nationals interim manager,Yes,Yes,N/A,1,Yes,4,Bench Coach,Yes,Hitting,No,No,No,No,51,0.45,No,No
+John Gibbons,Mets bench coach; former Blue Jays manager,No,Yes,N/A,11,Yes,8,Manager,Yes,Hitting,Yes,Yes,No,No,63,0.501,No,No
+Fredi González,Orioles bench coach; former Marlins and Braves manager,No,Yes,N/A,10,Yes,16,Manager,No,Hitting,No,Yes,No,No,61,0.506,No,Yes
+Sal Fasano,Braves catching coach; former minor league manager,No,No,Yes,0,Yes,8,Position Coach,Yes,Hitting,Yes,Yes,No,No,54,0,No,No
+Rodney Linares,Rays bench coach; former minor league manager,No,No,Yes,0,Yes,7,Bench Coach,No,Hitting,Yes,Yes,Yes,No,48,0,No,Yes
+Kevin Long,Phillies hitting coach,Yes,No,Yes,0,Yes,19,Hitting/Pitching Coach,No,Hitting,Yes,Yes,Yes,Yes,58,0,No,Yes
+Hensley Meulens,Rockies hitting coach,No,No,No,0,Yes,16,Bench Coach,Yes,Hitting,Yes,Yes,Yes,Yes,58,0,No,No
+Ryan Zimmerman,Nationals Player,Yes,No,No,0,No,0,None,Yes,Hitting,No,No,No,No,40,0,No,No
+Sean Doolittle,Nationals assistant pitching coach,Yes,No,No,0,Yes,2,Assistant Coach,Yes,Pitching,No,No,No,No,39,0,No,No
+Brian Snitker,Braves manager,No,Yes,N/A,10,Yes,11,Manager,No,Hitting,Yes,Yes,Yes,Yes,69,0.546,Yes,Yes
