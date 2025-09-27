@@ -133,7 +133,7 @@ function buildQuestionList(){
 }
 
 async function buildManagerChoices(){
-	const response = await fetch("https://raw.githubusercontent.com/jamesohara08/NatsManager/refs/heads/main/manager_data.json?token=GHSAT0AAAAAADMAJHKC23MD5IXSJVIXVGPQ2GXQS5Q");
+	const response = await fetch("https://raw.githubusercontent.com/jamesohara08/NatsManager/refs/heads/main/manager_data.json?token=GHSAT0AAAAAADMAJHKCSKOZKDVJKVV6GGIK2GXRBYA");
     data = await response.json();
     data.forEach(manager => {
     	manager_choices.push(manager);
@@ -262,18 +262,20 @@ function processAnswer(question_name, answer, importance){
 	switch(question_name) {
 		case "manager_experience":
 			processManagerExperience(answer, importance);
+			break;
 		case "coach_experience":
 			processCoachExperience(answer, importance);
+			break;
 		case "highest_coach_level":
 			processHighestCoachLevel(answer, importance);
+			break;
 		case "age":
 			processAge(answer, importance);
+			break;
 		default:
 			manager_choices.forEach(manager => {
-				console.log(manager[question_name]);
 				if(manager[question_name] == answer){
 					manager.score += importance;
-					console.log(manager.score)
 				}
 			});
 	}
@@ -318,6 +320,7 @@ function findManager(){
 	manager_choices.forEach(manager => {
 		if(manager.score > highest_score){
 			winning_managers = [manager];
+			highest_score = manager.score;
 		}
 		else if(manager.score == highest_score){
 			winning_managers.push(manager)
@@ -329,10 +332,10 @@ function findManager(){
 	let manager_info = winning_manager.info;
 	let name_array = manager_name.split(" ");
 	let imageURL = name_array[0].toLowerCase() + "_" + name_array[1].toLowerCase() + ".jpg";
-	answer_template = `<h2>Your new Nationals Manager</h2>
-						<img src="images/${imageURL}" class="w3-image"/>
-						<h4>${manager_name}</h4>
-						<p>${manager_info}</p>`
+	answer_template = `<div class="w3-center"><h4>Your new Nationals Manager</h4>
+						<img src="images/${imageURL}" class="w3-image" style="width:30%"/>
+						<p><b>${manager_name}</b><br>
+						${manager_info}</p>`
 	if(winning_managers.length > 1){
 		answer_template += `<p>Here are some other equally good choices:</p>
 							<ul class="w3-ul">`
@@ -351,6 +354,7 @@ function findManager(){
 			<a href="https://bsky.app/intent/compose?text=My next Nationals manager is ${manager_name}! Find yours here: ${encodedUrl}" class="w3-button w3-blue" target="_blank">Share on Bluesky!</a>
 			<a href="https://twitter.com/intent/tweet?text=My next Nationals manager is ${manager_name}! Find yours here: ${encodedUrl}" class="w3-button w3-black" target="_blank">Share on Twitter!</a>
 		</div>
-	`
+	`;
+	answer_template += `</div>`;
 	return answer_template;
 }
