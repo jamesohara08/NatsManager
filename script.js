@@ -134,7 +134,7 @@ function buildQuestionList(){
 }
 
 async function buildManagerChoices(){
-	const response = await fetch("https://raw.githubusercontent.com/jamesohara08/NatsManager/refs/heads/main/manager_data.json?token=GHSAT0AAAAAADMAJHKCUFHKG7GS6VJ5OL2A2G2CVTA");
+	const response = await fetch("https://raw.githubusercontent.com/jamesohara08/NatsManager/refs/heads/main/manager_data.json?token=GHSAT0AAAAAADMAJHKCXMBNDL5OLRD7ZMIG2G2UQ5A");
     data = await response.json();
     data.forEach(manager => {
     	manager_choices.push(manager);
@@ -150,7 +150,7 @@ function changeQuestion(question_name){
 		}
 	});
 	var question_template;
-	if(question_name == "nats_connection"){
+	if(question_name == "managerial_experience"){
 		let importance = Number(document.getElementById("myRange").value);
 		let next_question_name = processAnswer(question_name, selected_answer, importance);
 		question_template = findManager();
@@ -172,17 +172,21 @@ function processManagerExperience(question_name, answer, importance){
 	switch(answer) {
 		case "At least 1":
 			threshold = 1;
+			break;
 		case "At least 3":
 			threshold = 3;
+			break;
 		case "At least 6":
 			threshold = 6;
+			break;
 		case "At least 11":
 			threshold = 11;
+			break;
 		case "15 or more":
 			threshold = 15;
 	}
 	manager_choices.forEach(manager => {
-		if(manager.manager_experience >= threshold){
+		if(manager.years_of_managerial_experience >= threshold){
 			manager.score += importance;
 			manager[question_name + "_score"] = importance;
 		}
@@ -194,19 +198,24 @@ function processCoachExperience(question_name, answer, importance){
 	switch(answer) {
 		case "At least 1":
 			threshold = 1;
+			break;
 		case "At least 4":
 			threshold = 4;
+			break;
 		case "At least 6":
 			threshold = 6;
+			break;
 		case "At least 8":
 			threshold = 8;
+			break;
 		case "At least 11":
 			threshold = 11;
+			break;
 		case "15 or more":
 			threshold = 15;
 	}
 	manager_choices.forEach(manager => {
-		if(manager.coach_experience >= threshold){
+		if(manager.years_of_coach_experience >= threshold){
 			manager.score += importance;
 			manager[question_name + "_score"] = importance;
 		}
@@ -219,21 +228,27 @@ function processHighestCoachLevel(question_name, answer, importance){
 	switch(answer){
 		case "Manager":
 			acceptable_answers = ["Manager"];
+			break;
 		case "Bench Coach":
 			acceptable_answers = ["Manager", "Bench Coach"];
+			break;
 		case "Associate Manager":
 			acceptable_answers = ["Manager", "Bench Coach", "Associate Manager"];
+			break;
 		case "Hitting/Pitching Coach":
 			acceptable_answers = ["Manager", "Bench Coach", "Associate Manager", "Hitting/Pitching Coach"];
+			break;
 		case "Base Coach":
 			acceptable_answers = ["Manager", "Bench Coach", "Associate Manager", "Hitting/Pitching Coach", "Base Coach"];
+			break;
 		case "Position Coach":
 			acceptable_answers = ["Manager", "Bench Coach", "Associate Manager", "Hitting/Pitching Coach", "Base Coach", "Position Coach"];
+			break;
 		case "Assistant Coach":
 			acceptable_answers = ["Manager", "Bench Coach", "Associate Manager", "Hitting/Pitching Coach", "Base Coach", "Position Coach", "Assistant Coach"];
 	}
 	manager_choices.forEach(manager => {
-		if(acceptable_answers.includes(manager.highest_coach_level)){
+		if(acceptable_answers.includes(manager.highest_level_of_coaching_reached)){
 			manager.score += importance;
 			manager[question_name + "_score"] = importance;
 		}
@@ -247,12 +262,15 @@ function processAge(question_name, answer, importance){
 		case "35-45":
 			lower_threshold = 35;
 			upper_limit = 45;
+			break;
 		case "46-56":
 			lower_threshold = 46;
 			upper_limit = 56;
+			break;
 		case "57-68":
 			lower_threshold = 57;
 			upper_limit = 68;
+			break;
 		case "68+":
 			lower_threshold = 68;
 			upper_limit = 120;
@@ -261,6 +279,7 @@ function processAge(question_name, answer, importance){
 		if(manager.age >= lower_threshold && manager.age <= upper_limit){
 			manager.score += importance;
 			manager[question_name + "_score"] = importance;
+			console.log(manager);
 		}
 	});
 }
@@ -327,20 +346,21 @@ function writeQuestion(next_question_name){
 }
 
 function findManager(){
-	console.log(manager_choices);
-	let highest_score = 0;
-	let winning_managers = [manager_choices[0]];
-	manager_choices.forEach(manager => {
-		if(manager.score > highest_score){
-			winning_managers = [manager];
-			highest_score = manager.score;
-		}
-		else if(manager.score == highest_score){
-			winning_managers.push(manager)
-		}
-	});
-	let randomIndex = Math.floor(Math.random() * winning_managers.length);
-	let winning_manager = winning_managers[randomIndex];
+	// let highest_score = 0;
+	// let winning_managers = [manager_choices[0]];
+	// manager_choices.forEach(manager => {
+	// 	if(manager.score > highest_score){
+	// 		winning_managers = [manager];
+	// 		highest_score = manager.score;
+	// 	}
+	// 	else if(manager.score == highest_score){
+	// 		winning_managers.push(manager)
+	// 	}
+	// });
+	// let randomIndex = Math.floor(Math.random() * winning_managers.length);
+	// let winning_manager = winning_managers[randomIndex];
+	let winning_manager = manager_choices[38];
+	let winning_managers = [winning_manager];
 
 	let highest_q_score = ["",0,""];
 	let second_highest = ["",0,""];
@@ -348,14 +368,29 @@ function findManager(){
 
 	for (const key of question_list.keys()) {
 		if(winning_manager[key+"_score"] > highest_q_score[1]){
+			let split_question = key.split("_");
+			let question_name = "";
+			split_question.forEach(word => {
+				question_name += word[0].toUpperCase() + word.slice(1) + " ";
+			});
 			third_highest = second_highest;
 			second_highest = highest_q_score;
-			highest_q_score = [key,winning_manager[key+"_score"],winning_manager[key]];
+			highest_q_score = [question_name.trim(),winning_manager[key+"_score"],winning_manager[key]];
 		} else if(winning_manager[key+"_score"] > second_highest[1]){
+			let split_question = key.split("_");
+			let question_name = "";
+			split_question.forEach(word => {
+				question_name += word[0].toUpperCase() + word.slice(1) + " ";
+			});
 			third_highest = second_highest;
-			second_highest = [key,winning_manager[key+"_score"],winning_manager[key]];
+			second_highest = [question_name.trim(),winning_manager[key+"_score"],winning_manager[key]];
 		} else if(winning_manager[key+"_score"] > third_highest[1]){
-			third_highest = [key,winning_manager[key+"_score"],winning_manager[key]];
+			let split_question = key.split("_");
+			let question_name = "";
+			split_question.forEach(word => {
+				question_name += word[0].toUpperCase() + word.slice(1) + " ";
+			});
+			third_highest = [question_name.trim(),winning_manager[key+"_score"],winning_manager[key]];
 		} 
 	}
 	let manager_name = winning_manager.name;
@@ -363,10 +398,10 @@ function findManager(){
 	let name_array = manager_name.split(" ");
 	let imageURL = name_array[0].toLowerCase() + "_" + name_array[1].toLowerCase() + ".jpg";
 	answer_template = `<div class="w3-center"><h4>Your new Nationals Manager</h4>
-						<img src="images/${imageURL}" class="w3-image" style="width:30%"/>
+						<img src="images/${imageURL}" class="w3-image" style="width:70%;max-width:300px;"/>
 						<p><b>${manager_name}</b><br>
 						${manager_info}</p>
-						<p><b>Best Matches: </b><span class="w3-tag w3-margin-right w3-green">${highest_q_score[0]}: ${highest_q_score[2]}</span><span class="w3-tag w3-green w3-margin-right">${second_highest[0]}: ${second_highest[2]}</span><span class="w3-tag w3-margin-right w3-green">${third_highest[0]}: ${third_highest[2]}</span></p>`
+						<p><b>Best Matches: </b><span class="w3-tag w3-margin-right w3-margin-top w3-green">${highest_q_score[0]}: ${highest_q_score[2]}</span><span class="w3-tag w3-green w3-margin-right w3-margin-top">${second_highest[0]}: ${second_highest[2]}</span><span class="w3-tag w3-margin-right w3-margin-top w3-green">${third_highest[0]}: ${third_highest[2]}</span></p>`
 	if(winning_managers.length > 1){
 		answer_template += `<p>Here are some other equally good choices:</p>
 							<ul class="w3-ul">`
