@@ -134,7 +134,7 @@ function buildQuestionList(){
 }
 
 async function buildManagerChoices(){
-	const response = await fetch("https://raw.githubusercontent.com/jamesohara08/NatsManager/refs/heads/main/manager_data.json?token=GHSAT0AAAAAADMAJHKCJOTF43PP37KNT54I2G2CKGQ");
+	const response = await fetch("https://raw.githubusercontent.com/jamesohara08/NatsManager/refs/heads/main/manager_data.json?token=GHSAT0AAAAAADMAJHKCUFHKG7GS6VJ5OL2A2G2CVTA");
     data = await response.json();
     data.forEach(manager => {
     	manager_choices.push(manager);
@@ -151,6 +151,8 @@ function changeQuestion(question_name){
 	});
 	var question_template;
 	if(question_name == "nats_connection"){
+		let importance = Number(document.getElementById("myRange").value);
+		let next_question_name = processAnswer(question_name, selected_answer, importance);
 		question_template = findManager();
 	} else {
 		let importance = Number(document.getElementById("myRange").value);
@@ -340,20 +342,20 @@ function findManager(){
 	let randomIndex = Math.floor(Math.random() * winning_managers.length);
 	let winning_manager = winning_managers[randomIndex];
 
-	let highest_q_score = ["",0];
-	let second_highest = ["",0];
-	let third_highest = ["",0];
+	let highest_q_score = ["",0,""];
+	let second_highest = ["",0,""];
+	let third_highest = ["",0,""];
 
 	for (const key of question_list.keys()) {
 		if(winning_manager[key+"_score"] > highest_q_score[1]){
 			third_highest = second_highest;
 			second_highest = highest_q_score;
-			highest_q_score = [key,winning_manager[key+"_score"]];
+			highest_q_score = [key,winning_manager[key+"_score"],winning_manager[key]];
 		} else if(winning_manager[key+"_score"] > second_highest[1]){
 			third_highest = second_highest;
-			second_highest = [key,winning_manager[key+"_score"]];
+			second_highest = [key,winning_manager[key+"_score"],winning_manager[key]];
 		} else if(winning_manager[key+"_score"] > third_highest[1]){
-			third_highest = [key,winning_manager[key+"_score"]];
+			third_highest = [key,winning_manager[key+"_score"],winning_manager[key]];
 		} 
 	}
 	let manager_name = winning_manager.name;
@@ -364,7 +366,7 @@ function findManager(){
 						<img src="images/${imageURL}" class="w3-image" style="width:30%"/>
 						<p><b>${manager_name}</b><br>
 						${manager_info}</p>
-						<p><span class="w3-tag w3-margin-right w3-green">${highest_q_score[0]}</span><span class="w3-tag w3-green w3-margin-right">${second_highest[0]}</span><span class="w3-tag w3-margin-right w3-green">${third_highest[0]}</span></p>`
+						<p><b>Best Matches: </b><span class="w3-tag w3-margin-right w3-green">${highest_q_score[0]}: ${highest_q_score[2]}</span><span class="w3-tag w3-green w3-margin-right">${second_highest[0]}: ${second_highest[2]}</span><span class="w3-tag w3-margin-right w3-green">${third_highest[0]}: ${third_highest[2]}</span></p>`
 	if(winning_managers.length > 1){
 		answer_template += `<p>Here are some other equally good choices:</p>
 							<ul class="w3-ul">`
