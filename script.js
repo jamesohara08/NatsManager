@@ -2,6 +2,7 @@ const question_list = new Map();
 const manager_choices = [];
 buildQuestionList();
 buildManagerChoices();
+addTrackertoSlider()
 
 function buildQuestionList(){
 	let manager_question = {
@@ -79,7 +80,7 @@ function buildQuestionList(){
 	};
 
 	let top_orgs = {
-		question: "Should your next manager have been at one of the teams that appears in <a href='https://www.nytimes.com/athletic/6273808/2025/04/16/mlb-top-10-front-offices-executive-vote/' target='_blank'>The Athletic Top 10 Front Offices</a> in their last job?",
+		question: "Should your next manager have been at one of the teams that appears in <a href='https://www.nytimes.com/athletic/6273808/2025/04/16/mlb-top-10-front-offices-executive-vote/' target='_blank'>The Athletic's Top 10 Front Offices</a> in their last job?",
 		answers: ["Yes", "No", "Don't Care"],
 		next: "made_playoffs"
 	};
@@ -133,7 +134,7 @@ function buildQuestionList(){
 }
 
 async function buildManagerChoices(){
-	const response = await fetch("https://raw.githubusercontent.com/jamesohara08/NatsManager/refs/heads/main/manager_data.json?token=GHSAT0AAAAAADMAJHKCSKOZKDVJKVV6GGIK2GXRBYA");
+	const response = await fetch("https://raw.githubusercontent.com/jamesohara08/NatsManager/refs/heads/main/manager_data.json?token=GHSAT0AAAAAADMAJHKCRPQX3OJOLWNKN4JQ2G2AVWQ");
     data = await response.json();
     data.forEach(manager => {
     	manager_choices.push(manager);
@@ -152,7 +153,8 @@ function changeQuestion(question_name){
 	if(question_name == "nats_connection"){
 		question_template = findManager();
 	} else {
-		let next_question_name = processAnswer(question_name, selected_answer, 1);
+		let importance = document.getElementById("myRange").value;
+		let next_question_name = processAnswer(question_name, selected_answer, importance);
 		question_template = writeQuestion(next_question_name);
 	}
 	let question = document.getElementById("question");
@@ -160,6 +162,7 @@ function changeQuestion(question_name){
         question.removeChild(question.firstChild);
     }
     question.insertAdjacentHTML('beforeend', question_template);
+    addTrackertoSlider();
 }
 
 function processManagerExperience(answer, importance){
@@ -235,7 +238,6 @@ function processHighestCoachLevel(answer, importance){
 function processAge(answer, importance){
 	let lower_threshold = 0;
 	let upper_limit = 0;
-	["35-45","46-56","57-68", "68+"]
 	switch(answer) {
 		case "35-45":
 			lower_threshold = 35;
@@ -301,7 +303,7 @@ function writeQuestion(next_question_name){
 	if("extra_text" in question_info){
 		extra_text = question_info.extra_text;
 	}
-	let question_template = `<h2>${question}</h2>
+	let question_template = `<h3>${question}</h3>
 							<h4>${extra_text}</h4>`
 	let answers = question_info.answers;
 	answers.forEach(answer => {
@@ -310,11 +312,15 @@ function writeQuestion(next_question_name){
 	      <label>${answer}</label>
 	    </p>`;
 	});
-	question_template +=`<button id="next_question" class="w3-button w3-blue w3-margin" onclick="changeQuestion('${next_question_name}')">Next Question</button>`
+	question_template +=`<div class="w3-margin-top w3-margin-bottom">
+      <b>Importance:</b> 
+    <input type="range" min="1" max="100" value="50" class="slider" id="myRange" style="vertical-align: middle;">
+    <span id="importance" class="w3-margin-right"></span><button id="next_question" class="w3-button w3-blue" onclick="changeQuestion('${next_question_name}')">Next Question&#8594;</button></div>`
 	return question_template;
 }
 
 function findManager(){
+	console.log(manager_choices);
 	let highest_score = 0;
 	let winning_managers = [manager_choices[0]];
 	manager_choices.forEach(manager => {
@@ -358,3 +364,14 @@ function findManager(){
 	answer_template += `</div>`;
 	return answer_template;
 }
+
+function addTrackertoSlider(){
+	var slider = document.getElementById("myRange");
+	var output = document.getElementById("importance");
+	output.innerHTML = slider.value;
+
+	slider.oninput = function() {
+	  output.innerHTML = this.value;
+	}
+}
+

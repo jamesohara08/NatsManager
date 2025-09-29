@@ -11,7 +11,7 @@
 <div class="w3-content w3-container" id="content">
   <h1>Choose Your New Nats Manager</h1>
   <div id="question" class="w3-container w3-card-4 w3-margin">
-    <h2>Do you want your next manager to have prior MLB managerial experience?</h2>
+    <h3>Do you want your next manager to have prior MLB managerial experience?</h3>
     <p>
       <input class="w3-radio" type="radio" name="manager" value="Yes">
       <label>Yes</label>
@@ -24,7 +24,11 @@
       <input class="w3-radio" type="radio" name="manager" value="Don't Care">
       <label>Don't Care</label>
     </p>
-    <button id="next_question" class="w3-button w3-blue w3-margin" onclick="changeQuestion('manager')">Next Question</button>
+    <div class="w3-margin-top w3-margin-bottom">
+      <b>Importance:</b> (Higher is more important) 
+    <input type="range" min="1" max="100" value="50" class="slider" id="myRange" style="vertical-align: middle;">
+    <span id="importance" class="w3-margin-right"></span>
+    <button id="next_question" class="w3-button w3-blue" onclick="changeQuestion('manager')">Next Question&#8594;</button></div>
   </div>
 </div>
 <script src="script.js" defer></script>

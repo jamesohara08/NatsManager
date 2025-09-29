@@ -88,7 +88,7 @@
         "score":0
     },
     {
-        "name": "Alyssa Nakken ",
+        "name": "Alyssa Nakken",
         "info": "Giants assistant coach",
         "nats_connection": "No",
         "manager": "No",
@@ -110,7 +110,7 @@
         "score":0
     },
     {
-        "name": "Kristopher Negr\u00c3\u00b3n\u00c2\u00a0",
+        "name": "Kristopher Negr\u00c3\u00b3n",
         "info": "Mariners first base coach",
         "nats_connection": "No",
         "manager": "No",
@@ -132,7 +132,7 @@
         "score":0
     },
     {
-        "name": "Johnny Washington\u00c2\u00a0",
+        "name": "Johnny Washington",
         "info": "Angels hitting coach",
         "nats_connection": "No",
         "manager": "No",
@@ -154,7 +154,7 @@
         "score":0
     },
     {
-        "name": "Rickie Weeks Jr.\u00c2\u00a0",
+        "name": "Rickie Weeks Jr.",
         "info": "Brewers associate manage",
         "nats_connection": "No",
         "manager": "No",
@@ -176,7 +176,7 @@
         "score":0
     },
     {
-        "name": "Craig Albernaz\u00c2\u00a0",
+        "name": "Craig Albernaz",
         "info": "Guardians bench coach",
         "nats_connection": "No",
         "manager": "No",
@@ -198,7 +198,7 @@
         "score":0
     },
     {
-        "name": "Kai Correa ",
+        "name": "Kai Correa",
         "info": "Guardians field coordinator",
         "nats_connection": "No",
         "manager": "No",
@@ -220,7 +220,7 @@
         "score":0
     },
     {
-        "name": "Daniel Descalso\u00c2\u00a0",
+        "name": "Daniel Descalso",
         "info": "Cardinals bench coach",
         "nats_connection": "No",
         "manager": "No",
@@ -242,7 +242,7 @@
         "score":0
     },
     {
-        "name": "Ryan Flaherty\u00c2\u00a0",
+        "name": "Ryan Flaherty",
         "info": "Cubs bench coach",
         "nats_connection": "No",
         "manager": "No",
@@ -264,7 +264,7 @@
         "score":0
     },
     {
-        "name": "Danny Lehmann\u00c2\u00a0",
+        "name": "Danny Lehmann",
         "info": "Dodgers bench coach",
         "nats_connection": "No",
         "manager": "No",
@@ -286,7 +286,7 @@
         "score":0
     },
     {
-        "name": "Skip Schumaker ",
+        "name": "Skip Schumaker",
         "info": "Marlins manager",
         "nats_connection": "No",
         "manager": "Yes",
@@ -308,7 +308,7 @@
         "score":0
     },
     {
-        "name": "David Bell ",
+        "name": "David Bell",
         "info": "Reds manager",
         "nats_connection": "No",
         "manager": "Yes",
@@ -330,7 +330,7 @@
         "score":0
     },
     {
-        "name": "Scott Servais\u00c2\u00a0",
+        "name": "Scott Servais",
         "info": "Mariners manager",
         "nats_connection": "No",
         "manager": "Yes",
@@ -352,7 +352,7 @@
         "score":0
     },
     {
-        "name": "Buck Showalter ",
+        "name": "Buck Showalter",
         "info": "last managed the 2023 Mets",
         "nats_connection": "No",
         "manager": "Yes",
@@ -374,7 +374,7 @@
         "score":0
     },
     {
-        "name": "David Ross\u00c2\u00a0",
+        "name": "David Ross",
         "info": "last managed the 2023 Cubs",
         "nats_connection": "No",
         "manager": "Yes",
@@ -396,7 +396,7 @@
         "score":0
     },
     {
-        "name": "Phil Nevin\u00c2\u00a0",
+        "name": "Phil Nevin",
         "info": "last managed the 2023 Angels",
         "nats_connection": "No",
         "manager": "Yes",
@@ -418,7 +418,7 @@
         "score":0
     },
     {
-        "name": "Joe Maddon ",
+        "name": "Joe Maddon",
         "info": "last managed the 2022 Angels",
         "nats_connection": "No",
         "manager": "Yes",
@@ -440,7 +440,7 @@
         "score":0
     },
     {
-        "name": "Joe Girardi\u00c2\u00a0",
+        "name": "Joe Girardi",
         "info": "last managed the 2022 Phillies",
         "nats_connection": "No",
         "manager": "Yes",
@@ -617,7 +617,7 @@
     },
     {
         "name": "Jeff Banister",
-        "info": "Diamondbacks bench coach; former Rangers manager ",
+        "info": "Diamondbacks bench coach; former Rangers manager",
         "nats_connection": "No",
         "manager": "Yes",
         "milb_manager": "N/A",
