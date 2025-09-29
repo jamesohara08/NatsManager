@@ -6,45 +6,45 @@ addTrackertoSlider()
 
 function buildQuestionList(){
 	let manager_question = {
-		next_if_yes: "manager_experience",
-		next_if_no: "milb_manager"
+		next_if_yes: "years_of_managerial_experience",
+		next_if_no: "minor_league_manager"
 	};
 
 	let milb_question = {
 		question: "Do you want your next manager to have Minor League managerial experience?",
 		answers: ["Yes","No","Don't Care"],
-		next: "coach"
+		next: "coach_experience"
 	};
 
 	let manager_experience = {
 		question: "How many years experience should your next manager have as a manager?",
 		answers: ["At least 1","At least 3","At least 6","At least 11","15 or more"],
-		next: "win_percentage"
+		next: "managerial_win_percentage"
 	};
 
 	let winning_percentage = {
 		question: "What's the minimum win percentage they should have as a manager?",
 		answers: [".400", ".425", ".450", ".475", ".500", ".525"],
-		next: "manager_of_the_year"
+		next: "won_manager_of_the_year"
 	};
 
 	let moty_question = {
 		question: "Do you want your next manager to have won AL or NL Manager of the Year before?",
 		answers: ["Yes","No","Don't Care"],
-		next: "coach"
+		next: "coach_experience"
 	};
 
 	let coach_question = {
 		question: "Do you want your next manager to have coaching experience?",
 		answers: ["Yes","No","Don't Care"],
-		next_if_yes: "coach_experience",
+		next_if_yes: "years_of_coach_experience",
 		next_if_no: "age"
 	};
 
 	let coach_experience = {
 		question: "How many years of experience should your next manager have as a coach?",
 		answers: ["At least 1","At least 4","At least 6", "At least 8", "At least 11", "15 or more"],
-		next: "highest_coach_level"
+		next: "highest_level_of_coaching_reached"
 	};
 
 	let highest_coach_level = {
@@ -63,20 +63,20 @@ function buildQuestionList(){
 	let former_player = {
 		question: "Should your next manager have played in MLB?",
 		answers: ["Yes", "No", "Don't Care"],
-		next: "hitting_or_pitching"
+		next: "hitting_or_pitching_focus"
 	};
 
 	let hitting_or_pitching = {
 		question: "Should your next manager have a background primarily in hitting or pitching?",
 		answers: ["Hitting", "Pitching", "Don't Care"],
-		next: "player_dev"
+		next: "player_development_experience"
 	};
 
 	let player_dev = {
 		question: "Should your next manager have experience in player development?",
 		extra_text: "Front office player development, minor league manager/coach, roving instructor, etc.",
 		answers: ["Yes", "No", "Don't Care"],
-		next: "top_orgs"
+		next: "from_top_organization"
 	};
 
 	let top_orgs = {
@@ -97,7 +97,7 @@ function buildQuestionList(){
 		question: "Should your next manager have won the AL or NL pennant as a coach or manager before?",
 		extra_text:"For previous managers, only their managerial record counts here.",
 		answers: ["Yes", "No", "Don't Care"],
-		next_if_yes: "won_ws",
+		next_if_yes: "won_world_series",
 		next_if_no:"nats_connection"
 	};
 
@@ -113,28 +113,28 @@ function buildQuestionList(){
 		answers: ["Yes", "No", "Don't Care"]
 	};
 
-	question_list.set("manager", manager_question);
-	question_list.set("milb_manager", milb_question);
-	question_list.set("manager_experience",manager_experience);
-	question_list.set("win_percentage",winning_percentage);
-	question_list.set("manager_of_the_year",moty_question);
-	question_list.set("coach",coach_question);
-	question_list.set("coach_experience",coach_experience);
-	question_list.set("highest_coach_level",highest_coach_level);
+	question_list.set("managerial_experience", manager_question);
+	question_list.set("minor_league_manager", milb_question);
+	question_list.set("years_of_managerial_experience",manager_experience);
+	question_list.set("managerial_win_percentage",winning_percentage);
+	question_list.set("won_manager_of_the_year",moty_question);
+	question_list.set("coach_experience",coach_question);
+	question_list.set("years_of_coach_experience",coach_experience);
+	question_list.set("highest_level_of_coaching_reached",highest_coach_level);
 	question_list.set("age",age);
 	question_list.set("former_player",former_player);
 	question_list.set("made_playoffs",made_playoffs);
 	question_list.set("won_pennant",won_pennant);
-	question_list.set("won_ws",won_ws);
-	question_list.set("top_orgs",top_orgs);
-	question_list.set("player_dev",player_dev);
-	question_list.set("hitting_or_pitching",hitting_or_pitching);
+	question_list.set("won_world_series",won_ws);
+	question_list.set("from_top_organization",top_orgs);
+	question_list.set("player_development_experience",player_dev);
+	question_list.set("hitting_or_pitching_focus",hitting_or_pitching);
 	question_list.set("nats_connection",nats_connection);
 
 }
 
 async function buildManagerChoices(){
-	const response = await fetch("https://raw.githubusercontent.com/jamesohara08/NatsManager/refs/heads/main/manager_data.json?token=GHSAT0AAAAAADMAJHKCRPQX3OJOLWNKN4JQ2G2AVWQ");
+	const response = await fetch("https://raw.githubusercontent.com/jamesohara08/NatsManager/refs/heads/main/manager_data.json?token=GHSAT0AAAAAADMAJHKCJOTF43PP37KNT54I2G2CKGQ");
     data = await response.json();
     data.forEach(manager => {
     	manager_choices.push(manager);
@@ -153,7 +153,7 @@ function changeQuestion(question_name){
 	if(question_name == "nats_connection"){
 		question_template = findManager();
 	} else {
-		let importance = document.getElementById("myRange").value;
+		let importance = Number(document.getElementById("myRange").value);
 		let next_question_name = processAnswer(question_name, selected_answer, importance);
 		question_template = writeQuestion(next_question_name);
 	}
@@ -165,7 +165,7 @@ function changeQuestion(question_name){
     addTrackertoSlider();
 }
 
-function processManagerExperience(answer, importance){
+function processManagerExperience(question_name, answer, importance){
 	let threshold = 0;
 	switch(answer) {
 		case "At least 1":
@@ -182,11 +182,12 @@ function processManagerExperience(answer, importance){
 	manager_choices.forEach(manager => {
 		if(manager.manager_experience >= threshold){
 			manager.score += importance;
+			manager[question_name + "_score"] = importance;
 		}
 	});
 }
 
-function processCoachExperience(answer, importance){
+function processCoachExperience(question_name, answer, importance){
 	let threshold = 0;
 	switch(answer) {
 		case "At least 1":
@@ -205,12 +206,13 @@ function processCoachExperience(answer, importance){
 	manager_choices.forEach(manager => {
 		if(manager.coach_experience >= threshold){
 			manager.score += importance;
+			manager[question_name + "_score"] = importance;
 		}
 	});
 
 }
 
-function processHighestCoachLevel(answer, importance){
+function processHighestCoachLevel(question_name, answer, importance){
 	let acceptable_answers = [];
 	switch(answer){
 		case "Manager":
@@ -231,11 +233,12 @@ function processHighestCoachLevel(answer, importance){
 	manager_choices.forEach(manager => {
 		if(acceptable_answers.includes(manager.highest_coach_level)){
 			manager.score += importance;
+			manager[question_name + "_score"] = importance;
 		}
 	});
 }
 
-function processAge(answer, importance){
+function processAge(question_name, answer, importance){
 	let lower_threshold = 0;
 	let upper_limit = 0;
 	switch(answer) {
@@ -255,6 +258,7 @@ function processAge(answer, importance){
 	manager_choices.forEach(manager => {
 		if(manager.age >= lower_threshold && manager.age <= upper_limit){
 			manager.score += importance;
+			manager[question_name + "_score"] = importance;
 		}
 	});
 }
@@ -262,22 +266,23 @@ function processAge(answer, importance){
 function processAnswer(question_name, answer, importance){
 	let question_info = question_list.get(question_name);
 	switch(question_name) {
-		case "manager_experience":
-			processManagerExperience(answer, importance);
+		case "years_of_managerial_experience":
+			processManagerExperience(question_name, answer, importance);
 			break;
-		case "coach_experience":
-			processCoachExperience(answer, importance);
+		case "years_of_coach_experience":
+			processCoachExperience(question_name, answer, importance);
 			break;
-		case "highest_coach_level":
-			processHighestCoachLevel(answer, importance);
+		case "highest_level_of_coaching_reached":
+			processHighestCoachLevel(question_name, answer, importance);
 			break;
 		case "age":
-			processAge(answer, importance);
+			processAge(question_name, answer, importance);
 			break;
 		default:
 			manager_choices.forEach(manager => {
 				if(manager[question_name] == answer){
 					manager.score += importance;
+					manager[question_name + "_score"] = importance;
 				}
 			});
 	}
@@ -334,6 +339,23 @@ function findManager(){
 	});
 	let randomIndex = Math.floor(Math.random() * winning_managers.length);
 	let winning_manager = winning_managers[randomIndex];
+
+	let highest_q_score = ["",0];
+	let second_highest = ["",0];
+	let third_highest = ["",0];
+
+	for (const key of question_list.keys()) {
+		if(winning_manager[key+"_score"] > highest_q_score[1]){
+			third_highest = second_highest;
+			second_highest = highest_q_score;
+			highest_q_score = [key,winning_manager[key+"_score"]];
+		} else if(winning_manager[key+"_score"] > second_highest[1]){
+			third_highest = second_highest;
+			second_highest = [key,winning_manager[key+"_score"]];
+		} else if(winning_manager[key+"_score"] > third_highest[1]){
+			third_highest = [key,winning_manager[key+"_score"]];
+		} 
+	}
 	let manager_name = winning_manager.name;
 	let manager_info = winning_manager.info;
 	let name_array = manager_name.split(" ");
@@ -341,7 +363,8 @@ function findManager(){
 	answer_template = `<div class="w3-center"><h4>Your new Nationals Manager</h4>
 						<img src="images/${imageURL}" class="w3-image" style="width:30%"/>
 						<p><b>${manager_name}</b><br>
-						${manager_info}</p>`
+						${manager_info}</p>
+						<p><span class="w3-tag w3-margin-right w3-green">${highest_q_score[0]}</span><span class="w3-tag w3-green w3-margin-right">${second_highest[0]}</span><span class="w3-tag w3-margin-right w3-green">${third_highest[0]}</span></p>`
 	if(winning_managers.length > 1){
 		answer_template += `<p>Here are some other equally good choices:</p>
 							<ul class="w3-ul">`
