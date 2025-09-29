@@ -134,7 +134,7 @@ function buildQuestionList(){
 }
 
 async function buildManagerChoices(){
-	const response = await fetch("https://raw.githubusercontent.com/jamesohara08/NatsManager/refs/heads/main/manager_data.json?token=GHSAT0AAAAAADMAJHKCXMBNDL5OLRD7ZMIG2G2UQ5A");
+	const response = await fetch("https://raw.githubusercontent.com/jamesohara08/NatsManager/refs/heads/main/manager_data.json");
     data = await response.json();
     data.forEach(manager => {
     	manager_choices.push(manager);
@@ -150,7 +150,7 @@ function changeQuestion(question_name){
 		}
 	});
 	var question_template;
-	if(question_name == "managerial_experience"){
+	if(question_name == "nats_connection"){
 		let importance = Number(document.getElementById("myRange").value);
 		let next_question_name = processAnswer(question_name, selected_answer, importance);
 		question_template = findManager();
@@ -346,21 +346,19 @@ function writeQuestion(next_question_name){
 }
 
 function findManager(){
-	// let highest_score = 0;
-	// let winning_managers = [manager_choices[0]];
-	// manager_choices.forEach(manager => {
-	// 	if(manager.score > highest_score){
-	// 		winning_managers = [manager];
-	// 		highest_score = manager.score;
-	// 	}
-	// 	else if(manager.score == highest_score){
-	// 		winning_managers.push(manager)
-	// 	}
-	// });
-	// let randomIndex = Math.floor(Math.random() * winning_managers.length);
-	// let winning_manager = winning_managers[randomIndex];
-	let winning_manager = manager_choices[38];
-	let winning_managers = [winning_manager];
+	let highest_score = 0;
+	let winning_managers = [manager_choices[0]];
+	manager_choices.forEach(manager => {
+		if(manager.score > highest_score){
+			winning_managers = [manager];
+			highest_score = manager.score;
+		}
+		else if(manager.score == highest_score){
+			winning_managers.push(manager)
+		}
+	});
+	let randomIndex = Math.floor(Math.random() * winning_managers.length);
+	let winning_manager = winning_managers[randomIndex];
 
 	let highest_q_score = ["",0,""];
 	let second_highest = ["",0,""];
@@ -413,8 +411,7 @@ function findManager(){
 		});
 		answer_template += `</ul>`
 	}
-	let currentUrl = window.location.href;
-    let encodedUrl = encodeURIComponent(currentUrl);
+    let encodedUrl = encodeURIComponent("https://nextyeardc.com/NatsManager");
 	answer_template += `
 		<div class="w3-bar">
 			<a href="https://bsky.app/intent/compose?text=My next Nationals manager is ${manager_name}! Find yours here: ${encodedUrl}" class="w3-button w3-blue" target="_blank">Share on Bluesky!</a>
